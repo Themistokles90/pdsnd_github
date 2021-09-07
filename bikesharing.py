@@ -22,14 +22,14 @@ def get_filters():
     while month not in bikemonth:
         print('Sorry, we either have no information, about that month or you spelled the month wrong. The bikesharing is available from January to June. if you want to know the most frequent time for all the month type: "all".')
         month = input('Please reenter the month you want to look at.\n month: ').lower()
-    else: 
+    else:
         print('Thank you, we will no provide you information about', month)
     day = input('And last please enter the day of the week you want to know more about. If you want the information for all the days type: "all". \n day: ').lower()
     while day not in bikedays:
         print('Sorry, I guess you spelled the "day of the week" wrong.')
         day = input('Please reenter the day you want to look at. \n day: ').lower()
-    else: 
-        print('Thank you, we will now provide you information about', day)
+    else:
+        print('Thank you very much, we will now provide you information about', day)
         print('-'*40)
     return city, month, day
 
@@ -62,7 +62,7 @@ def load_data(city, month, day):
     if day != 'all':
         # filter by day of week to create the new dataframe
         df = df[df['day'] == day.title()]
-    
+
     return df
 
 
@@ -83,15 +83,15 @@ def time_stats(df):
     df['day'] =  df['Start Time'].dt.day_name()
     popular_day = df['day'].mode()[0]
     print('The most popular day is: ', popular_day)
-    
+
     # TO DO: display the most common start hour
     df['hour'] =  df['Start Time'].dt.hour
     popular_hour = df['hour'].mode()[0]
     print('The most popular hour of the day is: ', popular_hour, 'o\' clock')
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-    
+
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
@@ -111,14 +111,14 @@ def station_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
- 
+
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
-    
+
     # TO DO: display total travel time
     total_duration = df['Trip Duration'].sum()
     print('The total Duration is:', total_duration, 'seconds.')
@@ -133,10 +133,10 @@ def trip_duration_stats(df):
 
 def user_stats(df):
     """Displays statistics on bikeshare users."""
-    
+
     print('\nCalculating User Stats...\n')
     start_time = time.time()
-    
+
     # TO DO: Display counts of user types
     user_types = df['User Type'].value_counts()
     print(user_types)
@@ -151,10 +151,10 @@ def user_stats(df):
         print('The earlies birth year was: ', df['Birth Year'].min(),'\n', 'The latest birth year was: ', df['Birth Year'].max(),'\n', 'The average birth year was: ', df['Birth Year'].median() )
     else:
         print('Birth Year stats cannot be calculated because Gender does not appear in the dataframe')
-       
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-    
+
 def main():
     temp = ['','','']
     temp = get_filters()
@@ -181,6 +181,6 @@ def main():
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         break
     print('Goodbye')
-        
+
 if __name__ == "__main__":
-	main() 
+	main()
