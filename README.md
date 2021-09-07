@@ -4,7 +4,7 @@
 07.09.2021
 
 ### Project Title
-joes_bikesharing
+joes_bikesharing in the USA
 
 ### Description
 A programm that can give you detailed informaion about bikesharing in the USA
