@@ -17,19 +17,23 @@ def get_filters():
         print('Sorry, we either have no information, about that city or you spelled the city wrong. The cities we have are: chicago, new york city and washington')
         city = input('Please reenter the city you want to look at. \n city: ').lower()
     else:
-        print('Thank you, we will no provide you information about', city)
+        print('Thank you very much, we will no provide you information about', city)
     month = input('Now please enter the month of the year for which you seek information.The bikesharing is available from January to June. if you want to know the most frequent time for all the month type: "all". \n month: ').lower()
     while month not in bikemonth:
         print('Sorry, we either have no information, about that month or you spelled the month wrong. The bikesharing is available from January to June. if you want to know the most frequent time for all the month type: "all".')
         month = input('Please reenter the month you want to look at.\n month: ').lower()
     else:
-        print('Thank you, we will no provide you information about', month)
+
+        print('Thank you very much, we will no provide you information about', month)
+
     day = input('And last please enter the day of the week you want to know more about. If you want the information for all the days type: "all". \n day: ').lower()
     while day not in bikedays:
         print('Sorry, I guess you spelled the "day of the week" wrong.')
         day = input('Please reenter the day you want to look at. \n day: ').lower()
     else:
-        print('Thank you, we will now provide you information about', day)
+
+        print('Thank you very much, we will now provide you information about', day)
+
         print('-'*40)
     return city, month, day
 
